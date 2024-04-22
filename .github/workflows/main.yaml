@@ -21,7 +21,7 @@ jobs:
       - name: Install modules
         run: npm install
       - name: Production build
-        run: build:prod
+        run: npm run build:prod
       - name: Linting typescript
         run: npm run lint:ts
       - name: Unit testing
