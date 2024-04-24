@@ -33,7 +33,7 @@
     flex-direction: column;
     justify-content: center;
     gap: 8px;
-    margin-left: calc(var(--sidebar-width-collapsed) - var(--sidebar-width-collapsed)/1.5);
+    margin-left: calc(var(--sidebar-width-collapsed)/2.5);
 }
 
 .link {
