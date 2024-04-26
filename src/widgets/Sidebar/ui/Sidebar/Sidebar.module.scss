@@ -61,7 +61,7 @@
 
 .collapseBtn {
     position: absolute;
-    z-index: 100;
+    z-index: var(--toggle-sidebar);
     right: -32px;
     bottom:32px
 }

@@ -2,9 +2,10 @@
     padding: 6px 15px;
     cursor: pointer;
     color: var(--primary-color);
+
 }
 
-.clear {
+.clear,.clearInverted {
     padding: 0;
     border: none;
     background: none;
@@ -27,6 +28,10 @@
     background: var(--inverted-bg-color);
     color: var(--inverted-primary-color);
     border: none;
+}
+
+.clearInverted {
+    color: var(--inverted-primary-color);
 }
 
 .square {
