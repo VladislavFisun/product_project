@@ -20,8 +20,6 @@ Primary.args = {
     isOpen: true,
 };
 
-Primary.decorators = [ThemeDecorator(Theme.LIGHT)];
-
 export const Dark = Template.bind({});
 Dark.args = {
     children: 'Text',
