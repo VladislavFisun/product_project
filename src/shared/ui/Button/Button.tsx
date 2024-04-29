@@ -30,14 +30,16 @@ export const Button: FC<ButtonProps> = (props) => {
         theme,
         square,
         size = ButtonSize.m,
+        disabled,
         ...otherProps
     } = props;
 
-    const mods = useMemo(() => ({
+    const mods = {
         [cls[theme]]: true,
+        [cls.disabled]: disabled,
         [cls.square]: square,
         [cls[size]]: true,
-    }), [theme, square, size]);
+    };
 
     return (
         <button

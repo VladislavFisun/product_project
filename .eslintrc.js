@@ -51,7 +51,8 @@ module.exports = {
         'no-underscore-dangle': 'off',
         'i18next/no-literal-string': 'off',
         'no-params-reassign': 'off',
-        'max-len': ['error', { ignoreComments: true, code: 125 }],
+        'no-param-reassign': 'off',
+        'max-len': 'off',
     },
     globals: {
         __IS_DEV__: true,

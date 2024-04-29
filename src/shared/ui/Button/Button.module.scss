@@ -65,3 +65,8 @@ font: var(--font-m);
 .size_xl{
     font: var(--font-xl);
 }
+
+.disabled {
+    pointer-events: none;
+    opacity: 0.5;
+}

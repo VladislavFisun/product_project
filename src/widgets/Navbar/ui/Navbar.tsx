@@ -4,6 +4,9 @@ import { useTranslation } from 'react-i18next';
 import { Button, ThemeButton } from 'shared/ui/Button/Button';
 import { useCallback, useState } from 'react';
 import { LoginModal } from 'features/AuthByUserName';
+import { authSelector } from 'entities/User/model/selectors/userSelectors';
+import { useDispatch, useSelector } from 'react-redux';
+import { userActions } from 'entities/User';
 import cls from './Navbar.module.scss';
 
 interface NavbarProps {
@@ -12,15 +15,24 @@ interface NavbarProps {
 
 export const Navbar = ({ className }: NavbarProps) => {
     const { t } = useTranslation();
+    const authData = useSelector(authSelector);
+    const dispatch = useDispatch();
     const [isAuthModal, setAuthModal] = useState(false);
+
     const onToggle = useCallback(() => {
         setAuthModal((prev) => !prev);
     }, [setAuthModal]);
 
+    const onLogout = useCallback(() => {
+        dispatch(userActions.logout());
+    }, [dispatch]);
+
     return (
         <div className={classNames(cls.Navbar, {}, [className])}>
             <div className={cls.links}>
-                <Button onClick={onToggle} theme={ThemeButton.CLEAR_INVERTED}>{t('Войти')}</Button>
+                {authData
+                    ? <Button onClick={onLogout} theme={ThemeButton.CLEAR_INVERTED}>{t('Выйти')}</Button>
+                    : <Button onClick={onToggle} theme={ThemeButton.CLEAR_INVERTED}>{t('Войти')}</Button>}
                 <AppLink theme={AppLinkTheme.SECONDARY} to="/" className={cls.mainLink}>
                     {t('Главная')}
                 </AppLink>
@@ -28,11 +40,7 @@ export const Navbar = ({ className }: NavbarProps) => {
                     {t('О сайте')}
                 </AppLink>
             </div>
-            <LoginModal lazy isOpen={isAuthModal} onClose={onToggle}>
-                <div>
-                    is Authed
-                </div>
-            </LoginModal>
+            <LoginModal lazy isOpen={isAuthModal} onClose={onToggle} />
         </div>
     );
 };

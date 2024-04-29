@@ -45,7 +45,7 @@ const CodeInput = ({
             <div className={cls.caretWrapper}>
                 <Input
                     ref={inputRef}
-                    value={value}
+                    value={value || ''}
                     onFocus={onFocus}
                     onBlur={onBlur}
                     onSelect={onSelectionChange}

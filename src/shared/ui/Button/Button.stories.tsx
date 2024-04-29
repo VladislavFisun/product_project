@@ -89,4 +89,10 @@ SquareSizeXL.args = {
     size: ButtonSize.xl,
 };
 
+export const Disabled = Template.bind({});
+Disabled.args = {
+    children: 'disabled',
+    disabled: true,
+};
+
 OutlineDark.decorators = [ThemeDecorator(Theme.DARK)];
