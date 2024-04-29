@@ -1,19 +1,22 @@
 import { classNames } from 'shared/lib/classNames/classNames';
-import React, { useCallback, useEffect } from 'react';
+import React, { useCallback, useEffect, useState } from 'react';
 import Portal from 'shared/ui/Portal/Portal';
 import cls from './Modal.module.scss';
 
-interface ModalProps {
+export interface ModalProps {
     className?: string
     children?: React.ReactNode;
     isOpen?: boolean
     onClose?: () => void;
     closeOnEscape?:boolean
+    lazy?: boolean
 }
 
 const Modal = ({
-    className, children, isOpen, onClose, closeOnEscape = true,
+    className, children, isOpen, onClose, lazy = true, closeOnEscape = true,
 }: ModalProps) => {
+    const [isMounted, setIsMounted] = useState(false);
+
     const mods = {
         [cls.opened]: isOpen,
     };
@@ -24,11 +27,17 @@ const Modal = ({
     }, [onClose, closeOnEscape]);
 
     useEffect(() => {
+        isOpen && setIsMounted(true);
+    }, [isOpen]);
+
+    useEffect(() => {
         window.addEventListener('keydown', onEscapeClose);
         return () => {
             window.removeEventListener('keydown', onEscapeClose);
         };
     }, [onClose, onEscapeClose]);
+
+    if (lazy && !isMounted) return null;
 
     return (
         <Portal>

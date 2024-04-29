@@ -3,7 +3,7 @@ import { AppLink, AppLinkTheme } from 'shared/ui/AppLink/AppLink';
 import { useTranslation } from 'react-i18next';
 import { Button, ThemeButton } from 'shared/ui/Button/Button';
 import { useCallback, useState } from 'react';
-import Modal from 'shared/ui/Modal/Modal';
+import { LoginModal } from 'features/AuthByUserName';
 import cls from './Navbar.module.scss';
 
 interface NavbarProps {
@@ -28,11 +28,11 @@ export const Navbar = ({ className }: NavbarProps) => {
                     {t('О сайте')}
                 </AppLink>
             </div>
-            <Modal isOpen={isAuthModal} onClose={onToggle}>
+            <LoginModal lazy isOpen={isAuthModal} onClose={onToggle}>
                 <div>
                     is Authed
                 </div>
-            </Modal>
+            </LoginModal>
         </div>
     );
 };

@@ -15,6 +15,7 @@ export interface componentRenderOptions {
 export function componentRender(component:React.ReactNode, options:componentRenderOptions = {}) {
     const { route, initialState } = options;
     return render(
+        // @ts-ignore
         <StoreProvider initialState={initialState}>
             <MemoryRouter initialEntries={[route]}>
                 <I18nextProvider i18n={i18nForTests}>
