@@ -5,7 +5,7 @@ export const ThemeDecorator = (theme: Theme) => (StoryComponent: Story) => {
     document.body.className = '';
     document.body.classList.add(theme);
     return (
-        <div className="app" style={{ display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
+        <div className="app">
             <StoryComponent />
         </div>
     );
