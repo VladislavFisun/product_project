@@ -1,5 +1,7 @@
 import { classNames } from 'shared/lib/classNames/classNames';
-import React, { useCallback, useEffect, useState } from 'react';
+import React, {
+    useCallback, useEffect, useState, Fragment,
+} from 'react';
 import Portal from 'shared/ui/Portal/Portal';
 import cls from './Modal.module.scss';
 
@@ -40,13 +42,17 @@ const Modal = ({
     if (lazy && !isMounted) return null;
 
     return (
-        <Portal>
-            <div className={classNames(cls.Modal, mods, [className])} onClick={onClose}>
-                <div className={cls.overlay}>
-                    <div className={cls.content} onClick={(e) => e.stopPropagation()}>{children}</div>
-                </div>
-            </div>
-        </Portal>
+        <Fragment>
+            {isOpen && (
+                <Portal>
+                    <div className={classNames(cls.Modal, mods, [className])} onClick={onClose}>
+                        <div className={cls.overlay}>
+                            <div className={cls.content} onClick={(e) => e.stopPropagation()}>{children}</div>
+                        </div>
+                    </div>
+                </Portal>
+            )}
+        </Fragment>
     );
 };
 

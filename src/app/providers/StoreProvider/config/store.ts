@@ -5,11 +5,13 @@ import { loginReducer as login } from 'features/AuthByUserName/model/slice/login
 
 export function createReduxStore(initialState?:StateSchema) {
     const rootReducer:ReducersMapObject<StateSchema> = { user, login };
-    return configureStore<StateSchema>({
+    const store = configureStore<StateSchema>({
         reducer: rootReducer,
         devTools: __IS_DEV__,
         preloadedState: initialState,
         // @ts-ignore
         middleware: (getDefaultMiddleware) => getDefaultMiddleware({ serializableCheck: false }),
     });
+
+    return store;
 }

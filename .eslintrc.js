@@ -53,6 +53,9 @@ module.exports = {
         'no-params-reassign': 'off',
         'no-param-reassign': 'off',
         'max-len': 'off',
+        'react/jsx-fragments': 'off',
+        'react/jsx-no-useless-fragment': 'off',
+        'no-restricted-syntax':'off'
     },
     globals: {
         __IS_DEV__: true,
