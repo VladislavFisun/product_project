@@ -13,9 +13,10 @@ import cls from './LoginForm.module.scss';
 
 interface LoginFormProps {
     className?: string
+    onSave?: ()=>void
 }
 
-const LoginForm = memo(({ className }: LoginFormProps) => {
+const LoginForm = memo(({ className, onSave }: LoginFormProps) => {
     const { t } = useTranslation();
     const dispatch = useDispatch();
     const {
@@ -29,9 +30,10 @@ const LoginForm = memo(({ className }: LoginFormProps) => {
         dispatch(loginActions.setPassword(value));
     }, [dispatch]);
 
-    const onLogin = useCallback(() => {
-        dispatch(loginByUserName({ username, password }));
-    }, [dispatch, username, password]);
+    const onLogin = useCallback(async () => {
+        await dispatch(loginByUserName({ username, password }));
+        onSave();
+    }, [dispatch, username, password, onSave]);
 
     return (
         <div className={classNames(cls.LoginForm, {}, [className])}>

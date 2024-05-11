@@ -12,6 +12,12 @@
     { "id": "1", "username": "123", "password": "123" }
   ],
   "profile": {
-    "name": "typicode"
+    "firstname": "firstname",
+    "lastname": "lastname",
+    "age": 22,
+    "currency": "currency",
+    "country": "country",
+    "username": "username",
+    "avatar": "https://avatars.mds.yandex.net/i?id=ebffcf4f7ae93c553bb1cb5aa118de6804e2b773-9106968-images-thumbs&n=13"
   }
 }

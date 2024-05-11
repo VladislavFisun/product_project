@@ -1,6 +1,7 @@
 import { createSlice, PayloadAction } from '@reduxjs/toolkit';
 import { LoginSchema } from 'features/AuthByUserName/model/types/loginSchema';
 import { loginByUserName } from 'features/AuthByUserName/model/services/loginServices';
+import { USER_DATA } from 'shared/const/localStorage/localStorageConst';
 
 const initialState = {} as LoginSchema;
 export const loginSlice = createSlice({
@@ -12,6 +13,10 @@ export const loginSlice = createSlice({
         },
         setPassword: (state, action:PayloadAction<string>) => {
             state.password = action.payload;
+        },
+        logout: (state) => {
+            state = null;
+            localStorage.removeItem(USER_DATA);
         },
     },
     extraReducers: (builder) => {

@@ -6,8 +6,8 @@ interface LoginModalProps extends ModalProps{
     className?: string
 }
 
-export const LoginModal = ({ className, ...modalProps }: LoginModalProps) => (
-    <Modal {...modalProps} className={classNames('', {}, [className])}>
-        <LoginForm />
+export const LoginModal = ({ className, onClose, ...modalProps }: LoginModalProps) => (
+    <Modal {...modalProps} onClose={onClose} className={classNames('', {}, [className])}>
+        <LoginForm onSave={onClose} />
     </Modal>
 );
