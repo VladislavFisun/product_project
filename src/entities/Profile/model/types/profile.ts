@@ -11,7 +11,7 @@ export interface IProfile {
 }
 
 export interface ProfileSchema {
-    data:ProfileSchema
+    data:IProfile
     readonly :boolean
     isLoading: boolean
     error?:string

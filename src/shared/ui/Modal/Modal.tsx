@@ -24,9 +24,9 @@ const Modal = ({
     };
     const onEscapeClose = useCallback((e:KeyboardEvent) => {
         if (e.key === 'Escape') {
-            closeOnEscape && onClose();
+            closeOnEscape && isOpen && onClose();
         }
-    }, [onClose, closeOnEscape]);
+    }, [onClose, isOpen, closeOnEscape]);
 
     useEffect(() => {
         isOpen && setIsMounted(true);
