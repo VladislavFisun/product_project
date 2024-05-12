@@ -10,6 +10,7 @@
     ]
   ],
   "plugins": [
-    "i18next-extract"
+    "i18next-extract",
+    "react-refresh/babel"
   ]
 }

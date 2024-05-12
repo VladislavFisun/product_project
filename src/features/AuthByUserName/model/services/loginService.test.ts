@@ -1,4 +1,3 @@
-import axios from 'axios';
 import { loginByUserName } from 'features/AuthByUserName/model/services/loginServices';
 
 import { userActions } from 'entities/User';
