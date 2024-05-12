@@ -13,6 +13,15 @@ display: flex;
   display: block;
   margin-right: auto;
 }
+.loader {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.avatar {
+  margin-inline: auto;
+}
 
 .input{
   margin-bottom: 12px;

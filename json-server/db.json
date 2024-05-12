@@ -1,23 +1,47 @@
 {
   "posts": [
-    { "id": "1", "title": "a title", "views": 100 },
-    { "id": "2", "title": "another title", "views": 200 },
-    { "id": "3", "title": "another title 3", "views": 200 }
+    {
+      "id": "1",
+      "title": "a title",
+      "views": 100
+    },
+    {
+      "id": "2",
+      "title": "another title",
+      "views": 200
+    },
+    {
+      "id": "3",
+      "title": "another title 3",
+      "views": 200
+    }
   ],
   "comments": [
-    { "id": "1", "text": "a comment about post 1", "postId": "1" },
-    { "id": "2", "text": "another comment about post 1", "postId": "1" }
+    {
+      "id": "1",
+      "text": "a comment about post 1",
+      "postId": "1"
+    },
+    {
+      "id": "2",
+      "text": "another comment about post 1",
+      "postId": "1"
+    }
   ],
   "users": [
-    { "id": "1", "username": "123", "password": "123" }
+    {
+      "id": "1",
+      "username": "123",
+      "password": "123"
+    }
   ],
   "profile": {
     "firstname": "firstname",
     "lastname": "lastname",
     "age": 22,
-    "currency": "currency",
+    "currency": "eur",
     "country": "country",
     "username": "username",
-    "avatar": "https://avatars.mds.yandex.net/i?id=ebffcf4f7ae93c553bb1cb5aa118de6804e2b773-9106968-images-thumbs&n=13"
+    "avatar": "https://avatars.mds.yandex.net/i?id=b43849083e6fc131de26b0ab7edcee0126393e95-5232476-images-thumbs&n=13"
   }
 }

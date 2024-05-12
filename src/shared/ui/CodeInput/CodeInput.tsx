@@ -5,7 +5,9 @@ import React, {
 import { Input } from 'shared/ui/Input/Input';
 import cls from './CodeInput.module.scss';
 
-interface InputProps extends InputHTMLAttributes<HTMLInputElement>{}
+interface InputProps extends InputHTMLAttributes<HTMLInputElement>{
+    readOnly?:boolean;
+}
 
 const CodeInput = ({
     className, placeholder, value, autoFocus, ...inputProps
@@ -52,7 +54,7 @@ const CodeInput = ({
                     className={classNames(cls.input, {}, [className])}
                     {...inputProps}
                 />
-                {focus && <span className={cls.caret} style={{ left: `${caretPosition * 9}px` }}></span>}
+                {!inputProps.readOnly && focus && <span className={cls.caret} style={{ left: `${caretPosition * 9}px` }}></span>}
             </div>
         </div>
     );
