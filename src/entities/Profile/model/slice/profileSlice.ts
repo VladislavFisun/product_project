@@ -5,7 +5,7 @@ import { fetchProfileData } from 'entities/Profile';
 import { getProfileFormData } from 'entities/Profile/model/selectors/profileSelectors';
 import { updateProfileData } from 'entities/Profile/model/services/updateProfileData';
 
-const initialState = { readOnly: true } as ProfileSchema;
+const initialState = { readOnly: true, _init: false } as ProfileSchema;
 export const profileSlice = createSlice({
     name: 'profile',
     initialState,
@@ -23,6 +23,9 @@ export const profileSlice = createSlice({
                 ...state.form,
                 ...action.payload,
             };
+        },
+        setInit: (state) => {
+            state._init = true;
         },
     },
     extraReducers: (builder) => {

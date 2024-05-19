@@ -16,4 +16,5 @@ export interface ProfileSchema {
     readOnly :boolean
     isLoading: boolean
     error?:string
+    _init:boolean
 }
