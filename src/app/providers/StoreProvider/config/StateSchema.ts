@@ -3,11 +3,13 @@ import { LoginSchema } from 'features/AuthByUserName/model/types/loginSchema';
 import { ProfileSchema } from 'entities/Profile';
 import { AxiosInstance } from 'axios';
 import { NavigateFunction } from 'react-router-dom';
+import { ArticleDetailsSchema } from 'entities/Article';
 
 export interface StateSchema {
  user:UserSchema;
  login:LoginSchema
  profile:ProfileSchema
+ articleDetails:ArticleDetailsSchema
 }
 
 export type StateSchemaKey = keyof StateSchema
