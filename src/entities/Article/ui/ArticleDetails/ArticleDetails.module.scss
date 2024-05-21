@@ -1,3 +1,17 @@
 .ArticleDetails {
   min-height: 100%;
 }
+
+.details {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.icon {
+  fill: var(--primary-color);
+}
+
+.block {
+  margin-top: 16px;
+}

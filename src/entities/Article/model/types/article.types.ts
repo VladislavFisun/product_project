@@ -3,6 +3,10 @@ export type TArticleBlockType = 'CODE' | 'IMAGE' | 'TEXT'
 export type ArticleBlock = {
     id:string;
     type:TArticleBlockType
+    src?:string
+    title:string;
+    paragraphs:string[]
+    code:string
 }
 export type ArticleImageBlock = {
     type: 'IMAGE'

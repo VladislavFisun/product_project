@@ -60,6 +60,7 @@ module.exports = {
         'consistent-return': 'off',
         'no-plusplus': 'off',
         'prefer-const': 'off',
+        'react/no-array-index-key': 'off',
     },
     globals: {
         __IS_DEV__: true,

@@ -14,17 +14,18 @@ interface TypographyProps {
     children:React.ReactNode
     state?:TTypographyState,
     fontColor?:string
+    as?:React.ElementType
 }
 
 const Typography = ({
-    className, fontColor, size, state, type = 'base', children,
+    className, fontColor, size, state, type = 'base', children, as: Component = 'span',
 }: TypographyProps) => (
-    <span
+    <Component
         className={classNames(cls[type], {}, [className, cls[size], cls[state]])}
         style={{ color: fontColor }}
     >
         {children}
-    </span>
+    </Component>
 );
 
 export { Typography };
