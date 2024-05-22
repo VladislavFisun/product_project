@@ -5,8 +5,8 @@ interface PortalProps {
     children:React.ReactNode,
     node?:HTMLElement
 }
-
-const Portal = ({ children, node = document.body }: PortalProps) => {
+const root = document.querySelector('body');
+const Portal = ({ children, node = root }: PortalProps) => {
     if (!node) {
         return null;
     }
