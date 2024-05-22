@@ -1,6 +1,6 @@
 import React from 'react';
 import { ComponentStory, ComponentMeta } from '@storybook/react';
-import Popover from './Popover';
+import { Popover } from './Popover';
 
 export default {
     title: 'shared/Popover',
