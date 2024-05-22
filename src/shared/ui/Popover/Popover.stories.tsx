@@ -1,16 +1,24 @@
-import React from 'react';
-import { ComponentStory, ComponentMeta } from '@storybook/react';
+import { Meta, Story } from '@storybook/react';
 import { Popover } from './Popover';
 
 export default {
     title: 'shared/Popover',
     component: Popover,
     argTypes: {
-        backgroundColor: { control: 'color' },
+        children: { control: 'text' },
     },
-} as ComponentMeta<typeof Popover>;
+} as Meta;
 
-const Template: ComponentStory<typeof Popover> = (args) => <Popover {...args} />;
+const Template: Story = () => (
+    <Popover>
+        <Popover.Trigger><button>trigger</button></Popover.Trigger>
+        <Popover.Content>
+            <div>content</div>
+        </Popover.Content>
+    </Popover>
+);
 
-export const Primary = Template.bind({});
-Primary.args = {};
+export const Default = Template.bind({});
+Default.args = {};
+
+export const CustomContent = Template.bind({});

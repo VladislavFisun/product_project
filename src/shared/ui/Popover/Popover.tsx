@@ -27,9 +27,13 @@ export const PopoverProvider = ({ children }:{children:React.ReactNode}) => {
 
         const anchorRect = anchor.getBoundingClientRect();
         const tooltipRect = tooltip.getBoundingClientRect();
+        const BASE_GAP = 30;
         const TOP_SPACE = 5;
+        const isTopAvailable = anchorRect.top - tooltipRect.height - TOP_SPACE > BASE_GAP;
+        const topPosition = anchorRect.top - tooltipRect.height - TOP_SPACE;
+        const bottomPosition = anchorRect.top + (tooltipRect.height + TOP_SPACE);
         setPosition({
-            top: anchorRect.top - tooltipRect.height - TOP_SPACE,
+            top: isTopAvailable ? topPosition : bottomPosition,
             left: anchorRect.left + anchorRect.width / 2 - tooltipRect.width / 2,
         });
     }, [anchor, tooltip]);
